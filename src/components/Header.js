@@ -1,21 +1,48 @@
 import React from 'react'
 import Image from "next/legacy/image";
+import {
+    SearchIcon,
+    HomeIcon,
+    HeartIcon
+} from '@heroicons/react/outline';
 
 function Header() {
   return (
-    <div>
-        <div className='flex justify-between max-w-6xl'>
-            <div className='relative h-24 w-24'>
-                <Image src='https://i.pinimg.com/originals/1e/f7/1a/1ef71a1999492060c800bb1f3ff9550a.png'
+    <div className='shadow-sm border-b sticky top-0 z-50'>
+        <div className='flex justify-between max-w-6xl mx-5 lg:mx-auto'>
+            {/* Left - Noon Logo */}
+            <div className='relative hidden lg:inline-grid w-10 cursor-pointer'>
+                <Image src='https://www.pngkit.com/png/full/429-4290017_noon-.png'
                     layout='fill'
-                    // width={120}
-                    // height={50}
+                    objectFit='contain'
                 />
             </div>
 
+            <div className='relative inline-grid lg:hidden w-10 flex-shrink-0 cursor-pointer'>
+                <Image src='https://play-lh.googleusercontent.com/4-wa067yiYYMj5rRdHm82jPdDiSHSoIkwwvHA0teCEauFFU_cjx053jMBwBxfo2anJo'
+                    layout='fill'
+                    objectFit='contain'
+                />
+            </div>
             
-            {/* Middle */}
-            {/* Right */}
+            {/* Middle - put home and likes tabs */}
+            <div className='flex items-center space-x-4 lg:space-x-20'>
+                <HomeIcon className='navBtn'/>
+                <HeartIcon className='navBtn'/>
+            </div>
+
+            {/* Right - search */}
+            <div className='hidden md:inline-grid max-w-xs'>
+                <div className='relative mt-1 p-3 rounded-md'>
+                    <div className='absolute inset-y-0 pl-3 flex items-center justify-end pointer-events-none'>
+                        <SearchIcon className='h-5 w-5 text-gray-500' />
+                    </div>
+                    <input className='bg-gray-50 block w-full pl-10 sm:text-sm border-gray-300 focus:ring-yellow-400 focus:border-yellow-400 rounded-md'
+                        type='text' 
+                        placeholder='Search'
+                    />
+                </div>
+            </div>
         </div>
         
     </div>

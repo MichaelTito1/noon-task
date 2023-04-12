@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["i.pinimg.com"]
+    domains: [
+      "www.pngkit.com",
+      "play-lh.googleusercontent.com"
+    ]
   }
 }
 
