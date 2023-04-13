@@ -30,4 +30,8 @@ body {
   .navBtn {
     @apply h-10 mt-3 mb-3 md:inline-flex cursor-pointer md:hover:scale-125 transition-all duration-150 ease-out;
   }
+
+  .btn {
+    @apply h-7 hover:scale-125 cursor-pointer transition-all duration-150 ease-out;
+  }
 }

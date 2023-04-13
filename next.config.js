@@ -4,7 +4,8 @@ const nextConfig = {
   images: {
     domains: [
       "www.pngkit.com",
-      "play-lh.googleusercontent.com"
+      "play-lh.googleusercontent.com",
+      "picsum.photos"
     ]
   }
 }
