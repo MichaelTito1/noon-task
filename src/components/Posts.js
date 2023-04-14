@@ -11,7 +11,7 @@ function Posts() {
             price: 9.99,
             userimg: 'https://picsum.photos/200',
             img: 'https://picsum.photos/400',
-            caption: 'this is a post',
+            caption: 'this is a post #instapost',
         },
         {
             id: 2,
@@ -32,7 +32,7 @@ function Posts() {
         },
     ]
   return (
-    <main className='grid grid-cols-1 lg:grid-cols-4'>
+    <main className='grid grid-cols-1 lg:grid-cols-4 lg:mt-12'>
         <section></section>
         <section className='col-span-2 '>
             <div>
