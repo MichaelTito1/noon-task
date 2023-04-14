@@ -10,10 +10,10 @@ function Header() {
   return (
     
     <div className="fixed bottom-0 lg:top-0 w-screen">
-        <div className='shadow-sm border-t lg:border-b sticky top-0 z-50'>
+        <div className='shadow-sm border-t lg:border-b sticky top-0 z-50  bg-black'>
             <div className='flex justify-between max-w-6xl mx-5 lg:mx-auto'>
                 {/* Left - Noon Logo */}
-                <div className='relative hidden lg:inline-grid w-10 cursor-pointer'>
+                <div className='relative hidden lg:inline-grid w-12 cursor-pointer'>
                     <Image src='https://www.pngkit.com/png/full/429-4290017_noon-.png'
                         layout='fill'
                         objectFit='contain'
