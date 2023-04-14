@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { HeartIcon } from '@heroicons/react/outline';
 import { HeartIcon as HeartIconFilled } from '@heroicons/react/solid';
@@ -7,10 +7,20 @@ function HeartButton({postProps}) {
     // TODO: initialize isFavorite according to whether the post is in favs
     const [isFavorite, setIsFavorite] = useState(false);
 
+    const checkPostIsFavorite = () => {
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        for(let i = 0; i < favorites.length; i++){
+            let fav = favorites[i];
+            // console.log(`fav = ${fav.id}, props.id = ${postProps.id}, comp = ${fav.id==postProps.id}`);
+            if(fav.id == postProps.id)
+                return true;
+        }
+        return false;
+    }
+
     const handleClick = () => {
         let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        
-        if(favorites.includes(postProps)){
+        if(checkPostIsFavorite()){
             favorites = favorites.filter(post => post.id !== postProps.id);
         }
         else{
@@ -18,7 +28,13 @@ function HeartButton({postProps}) {
         }
         localStorage.setItem('favorites', JSON.stringify([...favorites]));
         setIsFavorite(!isFavorite);
+        console.log(favorites);
     }
+
+    useEffect(() => {
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        setIsFavorite(checkPostIsFavorite());
+    }, [isFavorite]);
     
     return isFavorite ? 
         ( <button onClick={handleClick}><HeartIconFilled className='btn' /> </button> ) 
