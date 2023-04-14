@@ -4,7 +4,6 @@ import { HeartIcon } from '@heroicons/react/outline';
 import { HeartIcon as HeartIconFilled } from '@heroicons/react/solid';
 
 function HeartButton({postProps}) {
-    // TODO: initialize isFavorite according to whether the post is in favs
     const [isFavorite, setIsFavorite] = useState(false);
 
     const checkPostIsFavorite = () => {

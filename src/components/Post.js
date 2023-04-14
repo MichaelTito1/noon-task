@@ -37,14 +37,13 @@ function Post({ id, username, userImg, img, title, price, caption }) {
       {/* image */}
       <img src={img} className='object-cover w-full' alt='' />
 
-      {/* TODO: fix position of likes counter and likes button */}
       <div className='flex items-center justify-between px-5'>
         <div className='flex items-center w-full'>
           <HeartIconFilled className='h-7 fill-yellow-600' />
           <p className='p-3 font-bold text-yellow-600'>32 likes</p>
         </div>
 
-        {/* TODO: btn not working!!! */}
+        {/* TODO: btn not working in desktop!!! */}
         {/* <HeartIcon className='btn' onClick={handleLikeClick}/>  */}
         <HeartButton postProps={props}/>
 
