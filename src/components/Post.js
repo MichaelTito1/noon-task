@@ -14,6 +14,16 @@ function Post({ id, username, userImg, img, title, price, caption }) {
     console.log(`${id} clicked!`);
   }
 
+  const props = {
+    id: id,
+    username: username,
+    userImg: userImg,
+    img: img,
+    title: title,
+    price: price,
+    caption: caption
+  };
+  
   return (
     <div className='my-7 border rounded-sm border-yellow-600'>
 
@@ -36,7 +46,7 @@ function Post({ id, username, userImg, img, title, price, caption }) {
 
         {/* TODO: btn not working!!! */}
         {/* <HeartIcon className='btn' onClick={handleLikeClick}/>  */}
-        <HeartButton postId={id}/>
+        <HeartButton postProps={props}/>
 
       </div>
 

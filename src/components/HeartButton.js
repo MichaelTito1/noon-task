@@ -3,24 +3,21 @@ import { useState } from 'react';
 import { HeartIcon } from '@heroicons/react/outline';
 import { HeartIcon as HeartIconFilled } from '@heroicons/react/solid';
 
-function HeartButton({postId}) {
+function HeartButton({postProps}) {
+    // TODO: initialize isFavorite according to whether the post is in favs
     const [isFavorite, setIsFavorite] = useState(false);
 
     const handleClick = () => {
         let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        // const idx = favorites.indexOf(postId);
-        console.log(`idx = ${favorites.includes(postId)}`);
-        console.log(`before = ${favorites}`);
-        if(favorites.includes(postId)){
-            // favorites.splice(idx, 1);
-            favorites = favorites.filter(id => id !== postId);
+        
+        if(favorites.includes(postProps)){
+            favorites = favorites.filter(post => post.id !== postProps.id);
         }
         else{
-            favorites.push(postId);
+            favorites.push(postProps);
         }
         localStorage.setItem('favorites', JSON.stringify([...favorites]));
         setIsFavorite(!isFavorite);
-        console.log(`after = ${favorites}`);
     }
     
     return isFavorite ? 

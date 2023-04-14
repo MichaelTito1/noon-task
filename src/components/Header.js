@@ -5,6 +5,7 @@ import {
     HomeIcon,
     HeartIcon
 } from '@heroicons/react/outline';
+import Link from 'next/link';
 
 function Header() {
   return (
@@ -29,8 +30,13 @@ function Header() {
                 
                 {/* Middle - put home and likes tabs */}
                 <div className='flex items-center justify-around w-screen lg:space-x-20'>
-                    <HomeIcon className='navBtn'/>
-                    <HeartIcon className='navBtn'/>
+                    <Link href={"/"}>
+                        <HomeIcon className='navBtn'/>
+                    </Link>
+
+                    <Link href={"/FavoritesPage"}>
+                        <HeartIcon className='navBtn'/>
+                    </Link>                    
                 </div>
 
                 {/* Right - search */}

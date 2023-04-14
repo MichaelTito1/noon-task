@@ -32,7 +32,7 @@ function Posts() {
         },
     ]
   return (
-    <main className='grid grid-cols-1 lg:grid-cols-4 lg:mt-12'>
+    <main className='grid grid-cols-1 lg:grid-cols-4 mb-12 lg:mt-12'>
         <section></section>
         <section className='col-span-2 '>
             <div>
