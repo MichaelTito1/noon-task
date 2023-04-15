@@ -10,7 +10,6 @@ function HeartButton({postProps}) {
         let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         for(let i = 0; i < favorites.length; i++){
             let fav = favorites[i];
-            // console.log(`fav = ${fav.id}, props.id = ${postProps.id}, comp = ${fav.id==postProps.id}`);
             if(fav.id == postProps.id)
                 return true;
         }
@@ -27,11 +26,9 @@ function HeartButton({postProps}) {
         }
         localStorage.setItem('favorites', JSON.stringify([...favorites]));
         setIsFavorite(!isFavorite);
-        console.log(favorites);
     }
 
     useEffect(() => {
-        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         setIsFavorite(checkPostIsFavorite());
     }, [isFavorite]);
     

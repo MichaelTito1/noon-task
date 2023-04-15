@@ -20,13 +20,6 @@ function Header() {
                         objectFit='contain'
                     />
                 </div>
-
-                {/* <div className='relative inline-grid lg:hidden w-10 flex-shrink-0 cursor-pointer'>
-                    <Image src='https://play-lh.googleusercontent.com/4-wa067yiYYMj5rRdHm82jPdDiSHSoIkwwvHA0teCEauFFU_cjx053jMBwBxfo2anJo'
-                        layout='fill'
-                        objectFit='contain'
-                    />
-                </div> */}
                 
                 {/* Middle - put home and likes tabs */}
                 <div className='flex items-center justify-around w-screen lg:space-x-20'>

@@ -10,10 +10,6 @@ function Post({ id, username, userImg, img, title, price, caption }) {
     return `<span class="text-blue-500">${match}</span>`
   })
 
-  const handleLikeClick = (id) => {
-    console.log(`${id} clicked!`);
-  }
-
   const props = {
     id: id,
     username: username,
@@ -44,13 +40,11 @@ function Post({ id, username, userImg, img, title, price, caption }) {
         </div>
 
         {/* TODO: btn not working in desktop!!! */}
-        {/* <HeartIcon className='btn' onClick={handleLikeClick}/>  */}
         <HeartButton postProps={props}/>
-
       </div>
 
       {/* Price & title*/}
-      <h1 className='px-5 py-2 text-lg font-bold'>${price} {title}</h1>
+      <h1 className='px-5 py-2 text-2xl font-bold'>${price} {title}</h1>
 
       {/* caption */}
       <span className='px-5 font-bold mr-1 text-yellow-600'>{username} </span>
